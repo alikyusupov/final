@@ -1,26 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Navbar/>
+  <transition name="fade" mode="out-in">
+    <router-view></router-view>
+  </transition>
+  <Footer/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Footer
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@font-face {
+  font-family: 'prettyFont'; /*a name to be used later*/
+  src: url("./assets/fonts/pretty_font.ttf"); /*URL to font*/
+}
+
+*{
+  font-family: 'prettyFont'; /*a name to be used later*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+body{
+  min-height: 90vh;
+}
+.spacer{
+  flex-grow: 1;
+}
+a{
+  color:black !important;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 </style>

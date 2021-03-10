@@ -1,7 +1,11 @@
 <template>
 <section>
     <ul class="text-muted">
-        <li>More</li>
+        <li>
+            <router-link to="/chat" class="text-muted">
+                    <i class="bi bi-chat-left-text"></i> Chat
+                </router-link>
+        </li>
         <li>Policy</li>
         <li>Contacts</li>
     </ul>
@@ -25,7 +29,6 @@ export default {
         position: fixed;
         bottom: 15px;
         background-color: rgba(255, 255, 255, .7);
-        border:1px solid grey;
         border-radius:10px;
     }
     ul{ 
@@ -42,5 +45,10 @@ export default {
     li:hover{
         cursor: pointer;
     }
+    a{
+        text-decoration: none;
+    }
+
+
 
 </style>

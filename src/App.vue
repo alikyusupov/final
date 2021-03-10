@@ -33,22 +33,33 @@ export default {
 body{
   min-height: 90vh;
 }
-.spacer{
-  flex-grow: 1;
-}
 a{
   color:black !important;
+  text-decoration: none;
+}
+ul{
+  list-style-type: none;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
+.selfmessage {
+  background: #eee;
+  float: left;
+  border-radius: 5px 30px 30px 5px;
 }
 
-.fade-enter,
-.fade-leave-active {
-  opacity: 0
+.othermessage{
+  float: right;
+  background: #0084ff;
+  color: #fff;
+  border-radius: 30px 5px 5px 30px;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+
+
 </style>

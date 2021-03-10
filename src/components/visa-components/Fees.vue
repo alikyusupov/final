@@ -1,0 +1,196 @@
+<template>
+  
+
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <img src="@/assets/img/wallet.svg" style="max-width:100px">
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+  
+            <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 400 650" style="enable-background:new 0 0 400 650;max-width: 450px;" xml:space="preserve">
+              <path class="st0b" d="M375.3,641.6H26.1c-8.8,0-15.9-7.1-15.9-15.9V24.9C10.2,16.2,17.3,9,26.1,9h349.2c8.8,0,15.9,7.1,15.9,15.9
+                v600.8C391.2,634.5,384.1,641.6,375.3,641.6z"/>
+              <text transform="matrix(1 0 0 1 111.6668 59.0304)" class="st1b st2b">Visa Center of Finland</text>
+              <g id="row1">
+                <polygon points="63.3,83.1 60.8,81.6 58.1,82.8 58.8,79.9 56.8,77.7 59.7,77.4 61.2,74.9 62.4,77.6 65.3,78.2 63,80.2  "/>
+                <polygon points="82.6,83.1 80,81.6 77.3,82.8 78,79.9 76,77.7 79,77.4 80.4,74.9 81.6,77.6 84.5,78.2 82.3,80.2  "/>
+                <polygon points="100.6,83.1 98,81.6 95.3,82.8 96,79.9 94,77.7 97,77.4 98.4,74.9 99.6,77.6 102.5,78.2 100.3,80.2   "/>
+                <polygon points="118.3,83.1 115.7,81.6 113,82.8 113.7,79.9 111.7,77.7 114.6,77.4 116.1,74.9 117.3,77.6 120.2,78.2 117.9,80.2  
+                  "/>
+                <polygon points="137.5,83.1 135,81.6 132.2,82.8 132.9,79.9 130.9,77.7 133.9,77.4 135.3,74.9 136.5,77.6 139.4,78.2 137.2,80.2  
+                  "/>
+                <polygon points="155.5,83.1 153,81.6 150.2,82.8 150.9,79.9 148.9,77.7 151.9,77.4 153.3,74.9 154.5,77.6 157.4,78.2 155.2,80.2  
+                  "/>
+                <polygon points="173.6,83.1 171,81.6 168.3,82.8 169,79.9 167,77.7 170,77.4 171.4,74.9 172.6,77.6 175.5,78.2 173.3,80.2  "/>
+                <polygon points="192.8,83.1 190.3,81.6 187.6,82.8 188.2,79.9 186.2,77.7 189.2,77.4 190.7,74.9 191.8,77.6 194.8,78.2 192.5,80.2 
+                    "/>
+                <polygon points="210.8,83.1 208.3,81.6 205.6,82.8 206.2,79.9 204.2,77.7 207.2,77.4 208.7,74.9 209.8,77.6 212.8,78.2 210.5,80.2 
+                    "/>
+                <polygon points="227.9,83.1 225.3,81.6 222.6,82.8 223.3,79.9 221.3,77.7 224.3,77.4 225.7,74.9 226.9,77.6 229.8,78.2 227.6,80.2 
+                    "/>
+                <polygon points="247.1,83.1 244.6,81.6 241.9,82.8 242.5,79.9 240.5,77.7 243.5,77.4 245,74.9 246.1,77.6 249,78.2 246.8,80.2  "/>
+                <polygon points="265.1,83.1 262.6,81.6 259.9,82.8 260.5,79.9 258.5,77.7 261.5,77.4 263,74.9 264.1,77.6 267,78.2 264.8,80.2  "/>
+                <polygon points="281.4,83.1 278.8,81.6 276.1,82.8 276.8,79.9 274.8,77.7 277.8,77.4 279.2,74.9 280.4,77.6 283.3,78.2 281.1,80.2 
+                    "/>
+                <polygon points="300.6,83.1 298.1,81.6 295.4,82.8 296,79.9 294,77.7 297,77.4 298.5,74.9 299.6,77.6 302.5,78.2 300.3,80.2  "/>
+                <polygon points="318.6,83.1 316.1,81.6 313.4,82.8 314,79.9 312,77.7 315,77.4 316.5,74.9 317.6,77.6 320.5,78.2 318.3,80.2  "/>
+              </g>
+              <text transform="matrix(1 0 0 1 135.1638 114)" class="st1b st2b">cashier check</text>
+              <g id="row2">
+                <polygon points="62.2,133 59.7,131.5 56.9,132.7 57.6,129.8 55.6,127.6 58.6,127.4 60.1,124.8 61.2,127.5 64.1,128.1 61.9,130.1  
+                  "/>
+                <polygon points="81.4,133 78.9,131.5 76.2,132.7 76.9,129.8 74.9,127.6 77.8,127.4 79.3,124.8 80.5,127.5 83.4,128.1 81.1,130.1  
+                  "/>
+                <polygon points="99.4,133 96.9,131.5 94.2,132.7 94.9,129.8 92.9,127.6 95.8,127.4 97.3,124.8 98.5,127.5 101.4,128.1 99.1,130.1   
+                  "/>
+                <polygon points="117.1,133 114.6,131.5 111.9,132.7 112.5,129.8 110.5,127.6 113.5,127.4 115,124.8 116.1,127.5 119,128.1 
+                  116.8,130.1   "/>
+                <polygon points="136.4,133 133.8,131.5 131.1,132.7 131.8,129.8 129.8,127.6 132.7,127.4 134.2,124.8 135.4,127.5 138.3,128.1 
+                  136,130.1   "/>
+                <polygon points="154.4,133 151.8,131.5 149.1,132.7 149.8,129.8 147.8,127.6 150.7,127.4 152.2,124.8 153.4,127.5 156.3,128.1 
+                  154,130.1   "/>
+                <polygon points="172.5,133 169.9,131.5 167.2,132.7 167.9,129.8 165.9,127.6 168.8,127.4 170.3,124.8 171.5,127.5 174.4,128.1 
+                  172.1,130.1   "/>
+                <polygon points="191.7,133 189.1,131.5 186.4,132.7 187.1,129.8 185.1,127.6 188.1,127.4 189.5,124.8 190.7,127.5 193.6,128.1 
+                  191.4,130.1   "/>
+                <polygon points="209.7,133 207.1,131.5 204.4,132.7 205.1,129.8 203.1,127.6 206.1,127.4 207.5,124.8 208.7,127.5 211.6,128.1 
+                  209.4,130.1   "/>
+                <polygon points="226.7,133 224.2,131.5 221.5,132.7 222.2,129.8 220.2,127.6 223.1,127.4 224.6,124.8 225.8,127.5 228.7,128.1 
+                  226.4,130.1   "/>
+                <polygon points="246,133 243.4,131.5 240.7,132.7 241.4,129.8 239.4,127.6 242.4,127.4 243.8,124.8 245,127.5 247.9,128.1 
+                  245.7,130.1   "/>
+                <polygon points="264,133 261.4,131.5 258.7,132.7 259.4,129.8 257.4,127.6 260.4,127.4 261.8,124.8 263,127.5 265.9,128.1 
+                  263.7,130.1   "/>
+                <polygon points="280.2,133 277.7,131.5 275,132.7 275.7,129.8 273.7,127.6 276.6,127.4 278.1,124.8 279.3,127.5 282.2,128.1 
+                  279.9,130.1   "/>
+                <polygon points="299.5,133 296.9,131.5 294.2,132.7 294.9,129.8 292.9,127.6 295.9,127.4 297.3,124.8 298.5,127.5 301.4,128.1 
+                  299.2,130.1   "/>
+                <polygon points="317.5,133 314.9,131.5 312.2,132.7 312.9,129.8 310.9,127.6 313.9,127.4 315.3,124.8 316.5,127.5 319.4,128.1 
+                  317.2,130.1   "/>
+              </g>
+              <text transform="matrix(1 0 0 1 44 187)" class="st1b st2b">Service fee</text>
+              <text transform="matrix(1 0 0 1 44 254.5)" class="st1b st2b">Consulate fee</text>
+              <text transform="matrix(1 0 0 1 44 325)" class="st1b st2b">Premium lounge fee</text>
+              <g id="row3">
+                <polygon points="70.2,404.7 67.6,403.2 64.9,404.4 65.6,401.5 63.6,399.3 66.5,399 68,396.5 69.2,399.2 72.1,399.8 69.8,401.8  "/>
+                <polygon points="89.4,404.7 86.8,403.2 84.1,404.4 84.8,401.5 82.8,399.3 85.8,399 87.2,396.5 88.4,399.2 91.3,399.8 89.1,401.8  
+                  "/>
+                <polygon points="107.4,404.7 104.8,403.2 102.1,404.4 102.8,401.5 100.8,399.3 103.8,399 105.2,396.5 106.4,399.2 109.3,399.8 
+                  107.1,401.8   "/>
+                <polygon points="125.1,404.7 122.5,403.2 119.8,404.4 120.5,401.5 118.5,399.3 121.4,399 122.9,396.5 124.1,399.2 127,399.8 
+                  124.7,401.8   "/>
+                <polygon points="144.3,404.7 141.8,403.2 139,404.4 139.7,401.5 137.7,399.3 140.7,399 142.1,396.5 143.3,399.2 146.2,399.8 
+                  144,401.8   "/>
+                <polygon points="162.3,404.7 159.8,403.2 157,404.4 157.7,401.5 155.7,399.3 158.7,399 160.1,396.5 161.3,399.2 164.2,399.8 
+                  162,401.8   "/>
+                <polygon points="180.4,404.7 177.8,403.2 175.1,404.4 175.8,401.5 173.8,399.3 176.8,399 178.2,396.5 179.4,399.2 182.3,399.8 
+                  180.1,401.8   "/>
+                <polygon points="199.6,404.7 197.1,403.2 194.4,404.4 195,401.5 193,399.3 196,399 197.5,396.5 198.6,399.2 201.6,399.8 
+                  199.3,401.8   "/>
+                <polygon points="217.6,404.7 215.1,403.2 212.4,404.4 213,401.5 211,399.3 214,399 215.5,396.5 216.6,399.2 219.6,399.8 
+                  217.3,401.8   "/>
+                <polygon points="234.7,404.7 232.1,403.2 229.4,404.4 230.1,401.5 228.1,399.3 231.1,399 232.5,396.5 233.7,399.2 236.6,399.8 
+                  234.4,401.8   "/>
+                <polygon points="253.9,404.7 251.4,403.2 248.7,404.4 249.3,401.5 247.3,399.3 250.3,399 251.8,396.5 252.9,399.2 255.9,399.8 
+                  253.6,401.8   "/>
+                <polygon points="271.9,404.7 269.4,403.2 266.7,404.4 267.3,401.5 265.3,399.3 268.3,399 269.8,396.5 270.9,399.2 273.9,399.8 
+                  271.6,401.8   "/>
+                <polygon points="288.2,404.7 285.6,403.2 282.9,404.4 283.6,401.5 281.6,399.3 284.6,399 286,396.5 287.2,399.2 290.1,399.8 
+                  287.9,401.8   "/>
+                <polygon points="307.4,404.7 304.9,403.2 302.2,404.4 302.8,401.5 300.8,399.3 303.8,399 305.3,396.5 306.4,399.2 309.4,399.8 
+                  307.1,401.8   "/>
+                <polygon points="325.4,404.7 322.9,403.2 320.2,404.4 320.8,401.5 318.8,399.3 321.8,399 323.3,396.5 324.4,399.2 327.4,399.8 
+                  325.1,401.8   "/>
+              </g>
+              <g id="crest">
+                <line class="st3b" x1="241.1" y1="177.9" x2="246.2" y2="183.1"/>
+                <line class="st3b" x1="246.2" y1="177.9" x2="241.1" y2="183.1"/>
+              </g>
+              <g id="crest_1_">
+                <line class="st3b" x1="241.1" y1="245.9" x2="246.2" y2="251.1"/>
+                <line class="st3b" x1="246.2" y1="245.9" x2="241.1" y2="251.1"/>
+              </g>
+              <g id="crest_2_">
+                <line class="st3b" x1="241.1" y1="318.1" x2="246.2" y2="323.4"/>
+                <line class="st3b" x1="246.2" y1="318.1" x2="241.1" y2="323.4"/>
+              </g>
+              <text id="service_counter" transform="matrix(1 0 0 1 315.1511 187)" class="st1b st2b">0</text>
+              <text id="service_fees" transform="matrix(1 0 0 1 315.1507 218.5)" class="st1b st2b">0</text>
+              <text id="consulate_counter" transform="matrix(1 0 0 1 315.1514 254.5)" class="st1b st2b">0</text>
+              <text id="consulate_fees" transform="matrix(1 0 0 1 315.1514 285.5)" class="st1b st2b">0</text>
+              <text id="vip_counter" transform="matrix(1 0 0 1 315.1508 325.3182)" class="st1b st2b">0</text>
+              <text id="vip_fees" transform="matrix(1 0 0 1 315.1514 353.25)" class="st1b st2b">0</text>
+              <text transform="matrix(1 0 0 1 164.2238 458.6667)" class="st1b st2b">Total</text>
+              <text id="total" transform="matrix(1 0 0 1 315.1514 458.6667)" class="st1b st2b">0</text>
+              <text transform="matrix(1 0 0 1 26 570)"><tspan x="0" y="0" class="st1b st4b">Additional services</tspan><tspan x="0" y="18" class="st1b st4b">- courier delivery</tspan><tspan x="0" y="36" class="st1b st4b">- callback</tspan><tspan x="0" y="54" class="st1b st4b">- copy A4</tspan></text>
+              </svg>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="myDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Nationality
+              </button>
+                <div class="dropdown-menu" aria-labelledby="myDropdown">
+                  <span class="dropdown-item" id="rus">Russia</span>
+                  <span class="dropdown-item" id="blr">Belarus</span>
+                </div>
+            </div>
+  
+                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_gratis">
+                  <button class="btn btn-info" id="gratis">0 - 5</button>
+                </div>
+  
+                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_standart">
+                  <button class="btn btn-secondary" id="standart">6 and older</button>
+                </div>
+  
+                <!--belarus-->
+  
+                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_blr_0_5">
+                  <button class="btn btn-secondary" id="toddler_blr">0 - 5</button>
+                </div>
+  
+                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_blr_6_17">
+                  <button class="btn btn-secondary" id="child_blr">6 - 17</button>
+                </div>
+  
+                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_blr_18">
+                  <button class="btn btn-secondary" id="standart_blr">18 and older</button>
+                </div>
+  
+  
+                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_reset">
+                  <button class="btn btn-dark" id="reset">Reset</button>
+      
+                </div>
+                                                                <!--close right-->
+            </div>
+    </div>
+</div>
+  
+  
+
+</template>
+
+<script>
+// @ is an alias to /src
+
+export default {
+  name: 'Fees',
+  components: {
+      
+  }
+}
+</script>
+<style scoped>
+.st0b{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+.st1b{font-family:'MyriadPro-Regular';}
+.st2b{font-size:19px;}
+.st3b{fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+.st4b{font-size:15px;}
+</style>

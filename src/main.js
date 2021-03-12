@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css"
 
-const socket = io(location.origin);
+const socket = io.connect(location.origin);
 const app = createApp(App)
 app.config.globalProperties.$socket = socket
 

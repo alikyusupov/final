@@ -16,4 +16,8 @@ router.get("/schedule", userController.getSchedule)
 
 router.post("/chats",    userController.getClientChat)
 
+router.post("/book", userController.postBook)
+
+router.post("/getanswers", userController.getAnswers)
+
 module.exports = router;

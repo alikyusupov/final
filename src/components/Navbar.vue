@@ -11,24 +11,38 @@
             </span>
         </li>
     </router-link>
+        <li class="showable" data-bs-toggle="modal" data-bs-target="#menumodal">
+            <span data-hover="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </span>
+        </li>
     <router-link to="/about">
-        <li>
+        <li class="hidable">
             <span data-hover="About">
                 About
             </span>
         </li>
     </router-link>
     <router-link to="/visa">
-        <li>
+        <li class="hidable">
             <span data-hover="Виза">
                 Виза
             </span>
         </li>
     </router-link>
-    <router-link to="/appointment" v-if="isAuth">
-        <li>
+    <router-link to="/appointment" v-if="isAuth && !isAdmin">
+        <li class="hidable">
             <span data-hover="Запись">
                 Запись
+            </span>
+        </li>
+    </router-link>
+    <router-link to="/funland">
+        <li class="hidable">
+            <span data-hover="Funland">
+                Funland
             </span>
         </li>
     </router-link>
@@ -43,7 +57,7 @@
     <li class="spaced" v-if="!isAuth">
         <router-link to="/auth">
             <span data-hover="Login">
-                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
                     <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                 </svg>
@@ -53,13 +67,53 @@
      <li class="spaced" v-if="isAuth" @click="logout">
             <span>{{username}}</span>
             <span data-hover="Logout">
-                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
                     <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
                 </svg>
             </span>
      </li>
 </ul>
+
+<div id="menumodal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <ul class="mobile-menu">
+                <router-link to="/about" @click="handleModal">
+                    <li>
+                        About
+                    </li>
+                </router-link>
+                <router-link to="/visa" @click="handleModal">
+                    <li>
+                        Visa
+                    </li>
+                </router-link>
+                <router-link to="/funland"  @click="handleModal">
+                    <li>
+                        Funland
+                    </li>
+                </router-link>
+                <router-link to="/appointment" v-if="isAuth && !isAdmin"  @click="handleModal">
+                    <li>
+                        Запись
+                    </li>
+                </router-link>
+                <router-link to="/dashboard" v-if="isAdmin"  @click="handleModal">
+                    <li>
+                        Админка
+                    </li>
+                </router-link>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
 
 </template>
 
@@ -74,6 +128,9 @@ export default {
   methods:{
       logout(){
           this.$store.dispatch("logout")
+      },
+      handleModal(){
+          document.body.classList.remove("modal-open")
       }
   },
   computed:{
@@ -164,6 +221,25 @@ ul li:focus span {
 ul li:hover span::before,
 ul li:focus span::before {
 	background: #ffffff;
+}
+.mobile-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:800px) {
+    .hidable{
+        display: none
+    }
+    .showable{
+        display: block;
+    }
+}
+@media (min-width:801px){
+    .showable{
+        display: none;
+    }
 }
 
 </style>

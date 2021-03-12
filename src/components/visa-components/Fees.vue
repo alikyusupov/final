@@ -119,57 +119,37 @@
                 <line class="st3b" x1="241.1" y1="318.1" x2="246.2" y2="323.4"/>
                 <line class="st3b" x1="246.2" y1="318.1" x2="241.1" y2="323.4"/>
               </g>
-              <text id="service_counter" transform="matrix(1 0 0 1 315.1511 187)" class="st1b st2b">0</text>
-              <text id="service_fees" transform="matrix(1 0 0 1 315.1507 218.5)" class="st1b st2b">0</text>
-              <text id="consulate_counter" transform="matrix(1 0 0 1 315.1514 254.5)" class="st1b st2b">0</text>
-              <text id="consulate_fees" transform="matrix(1 0 0 1 315.1514 285.5)" class="st1b st2b">0</text>
-              <text id="vip_counter" transform="matrix(1 0 0 1 315.1508 325.3182)" class="st1b st2b">0</text>
-              <text id="vip_fees" transform="matrix(1 0 0 1 315.1514 353.25)" class="st1b st2b">0</text>
+              <text id="service_counter" transform="matrix(1 0 0 1 315.1511 187)" class="st1b st2b">{{adults}}</text>
+              <text id="service_fees" transform="matrix(1 0 0 1 315.1507 218.5)" class="st1b st2b">{{adults*26.75}}</text>
+              <text id="consulate_counter" transform="matrix(1 0 0 1 315.1514 254.5)" class="st1b st2b">{{adults}}</text>
+              <text id="consulate_fees" transform="matrix(1 0 0 1 315.1514 285.5)" class="st1b st2b">{{adults*35}}</text>
+              <text id="vip_counter" transform="matrix(1 0 0 1 315.1508 325.3182)" class="st1b st2b">{{adults+kids}}</text>
+              <text id="vip_fees" transform="matrix(1 0 0 1 315.1514 353.25)" class="st1b st2b">{{(adults+kids)*50}}</text>
               <text transform="matrix(1 0 0 1 164.2238 458.6667)" class="st1b st2b">Total</text>
-              <text id="total" transform="matrix(1 0 0 1 315.1514 458.6667)" class="st1b st2b">0</text>
+              <text id="total" transform="matrix(1 0 0 1 315.1514 458.6667)" class="st1b st2b">
+                {{(adults+kids)*50 + adults*35 + adults*26.75}}
+              </text>
               <text transform="matrix(1 0 0 1 26 570)"><tspan x="0" y="0" class="st1b st4b">Additional services</tspan><tspan x="0" y="18" class="st1b st4b">- courier delivery</tspan><tspan x="0" y="36" class="st1b st4b">- callback</tspan><tspan x="0" y="54" class="st1b st4b">- copy A4</tspan></text>
               </svg>
           </div>
           <div class="col-12 col-md-6">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="myDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Nationality
-              </button>
-                <div class="dropdown-menu" aria-labelledby="myDropdown">
-                  <span class="dropdown-item" id="rus">Russia</span>
-                  <span class="dropdown-item" id="blr">Belarus</span>
+                <div class="col-12" id="controllers_gratis">
+                  <button class="btn btn-info"  @click="countgratis">0 - 5</button>
                 </div>
-            </div>
-  
-                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_gratis">
-                  <button class="btn btn-info" id="gratis">0 - 5</button>
+                   <ul style="display:flex">
+                    <li v-for="index in kids" :key="index">
+                      <img style="width:50px" src="@/assets/img/kid.jpg" alt="">
+                    </li>
+                  </ul>
+                <div class="col-12" id="controllers_standart">
+                  <button class="btn btn-secondary"  @click="countstandart">6 and older</button>
                 </div>
-  
-                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_standart">
-                  <button class="btn btn-secondary" id="standart">6 and older</button>
-                </div>
-  
-                <!--belarus-->
-  
-                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_blr_0_5">
-                  <button class="btn btn-secondary" id="toddler_blr">0 - 5</button>
-                </div>
-  
-                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_blr_6_17">
-                  <button class="btn btn-secondary" id="child_blr">6 - 17</button>
-                </div>
-  
-                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_blr_18">
-                  <button class="btn btn-secondary" id="standart_blr">18 and older</button>
-                </div>
-  
-  
-                <div class="col-12" style="margin-top: 5%;display: none;" id="controllers_reset">
-                  <button class="btn btn-dark" id="reset">Reset</button>
-      
-                </div>
-                                                                <!--close right-->
-            </div>
+                <ul style="display:flex">
+                  <li v-for="index in adults" :key="index">
+                    <img style="width:50px" src="@/assets/img/man.png" alt="">
+                  </li>
+                </ul>
+          </div>
     </div>
 </div>
   
@@ -184,7 +164,22 @@ export default {
   name: 'Fees',
   components: {
       
+  },
+  data(){
+    return {
+      adults:0,
+      kids:0
+    }
+  },
+  methods:{
+    countgratis(){
+      this.kids++
+    },
+    countstandart(){
+      this.adults++
+    }
   }
+
 }
 </script>
 <style scoped>

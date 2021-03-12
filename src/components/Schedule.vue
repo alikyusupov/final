@@ -1,5 +1,5 @@
 <template>
-    
+     
     <div class="container">
         <h3>Schedule</h3>
         <div class="row">
@@ -26,7 +26,9 @@
         
                         <tr v-for="(spot, i) of spots" :key="i">
 
-                            <td align="center" v-for="(cell, j) of spots[i]" :key="j">
+                            <td align="center" v-for="(cell, j) of spots[i]" :key="j" @click="setID($event)"
+                            :id="String(i)+String(j)"
+                             v-bind:class="{ 'table-danger': spots[i][j].slot==='reserved', 'table-warning': spots[i][j].slot==='Disabled'}">
                                 {{spots[i][j].slot}}
                             </td>
         
@@ -77,39 +79,34 @@ export default {
       }
   },
   methods:{
-      initScheduleStyle(){
-          let array_of_slots = document.getElementsByTagName('td');
-            for (var i = 0; i < array_of_slots.length; i++) {
-            //array_of_slots[i].id = parseFloat([i]);
-            if(array_of_slots[i].innerText == "reserved" || array_of_slots[i].innerText == "not available"){
-                array_of_slots[i].classList.add("table-danger");
-                array_of_slots[i].classList.add("font-weight-bold");
-            }
-            else if(array_of_slots[i].innerText == "Disabled"){
-                array_of_slots[i].classList.add("table-warning");
-            }
-            else{
-                array_of_slots[i].classList.add("table-light");
-                array_of_slots[i].classList.add("font-weight-bold");
-            }
-        }
-      },
-      book(){
-          let applicant = {
-              firstname:    this.firstname,
-              lastname:     this.lastname,
-              phonenumber:  this.phonenumber,
-              email:        this.email,
-              slot:         this.slot
+      setID(e){
+          if(e.target.innerText != "reserved" && e.target.innerText != "Disabled"){
+                this.slot = e.target.id;
+                e.target.classList.add("table-success")
+                e.target.classList.remove("table-light")
           }
-          this.$store.dispatch("book", applicant);
+      },
+
+      book(){
+            if(!this.firstname||!this.lastname||!this.phonenumber||!this.email||!this.slot){
+                console.log("Все поля обязательны")
+            }else{
+            let applicant = {
+                firstname:    this.firstname,
+                lastname:     this.lastname,
+                phonenumber:  this.phonenumber,
+                email:        this.email,
+                slot:         this.slot
+            }
+            this.$store.dispatch("book", applicant);
+        }
       }
   },
   mounted(){
-      this.$store.dispatch("schedule");
+      this.$store.dispatch("schedule")
   },
   updated(){
-      this.initScheduleStyle()
+      //this.initScheduleStyle()
   },
   computed:{
       spots(){

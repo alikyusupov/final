@@ -1,4 +1,12 @@
 <template>
+      <transition name="modal">
+        <div v-if="isModal" class="modal-wrapper">
+          <div class="modal-body">
+            <img :src="url" alt="" class="img-fluid">
+            <p><span @click="closeModal" class="btn btn-light">OK</span></p>
+          </div>
+        </div>
+      </transition>
       <section class="row text-center">
         <div class="col-1 col-sm-2 col-md-4 col-lg-5"></div>
         <div class="col-10 col-sm-8 col-md-4 col-lg-2">
@@ -13,26 +21,21 @@
 
       <section class="row" id="gallery">
           <transition-group name="list">
-              <div v-for="doc of computeddocs" :key="doc.title" class="col-6 col-sm-4 col-md-3">
+              <div v-for="doc of computeddocs" :key="doc.title" class="col-6 col-sm-4 col-md-3" @click="showModal($event)">
                 <span>{{doc.title}}</span><br>
-                <img :id="doc.id" :src="doc.path" title="passport" >
+                <img :id="doc.id" :src="doc.path" title="passport">
               </div>
           </transition-group>
-          <!--<div class="col-6 col-sm-4 col-md-3">
+      </section>
 
-          <div class="col-6 col-sm-4 col-md-3">
-            <span>Itinerary</span><br>
-            <img id="icon_itinerary" src="@/assets/img/icons/icon_itinerary.svg" title="itinerary">
-          </div>-->
-
-    </section>
 </template>
 
 <script>
 // @ is an alias to /src
-
 export default {
   name: 'Documents',
+  components:{
+  },
   data(){
     return{
       query:"",
@@ -136,29 +139,53 @@ export default {
           title:  "itinerary",
           id:     "icon_itinerary",
           path:   "icons/icon_itinerary.svg"
-        },
+        }
+     
       ]
     }
   },
   methods:{
-    getImage(path){
-      return require(path)
+     closeModal(){
+            this.$store.commit("closeModal");
+            document.body.style.overflow = "scroll"
+        },
+    showModal(e){
+      this.$store.commit("showModal", {
+        path:"modals/" + e.target.id + ".svg"
+      })
+      document.body.style.overflow = "hidden"
     }
   },
   computed:{
-  computeddocs(){
-  let search = this.query;
-	return this.docs.filter(doc=> {
-	return doc.title.toLowerCase().indexOf(search) > -1;
+computeddocs(){
+let search = this.query.toLowerCase();
+return this.docs.filter(doc=> {
+return doc.title.toLowerCase().indexOf(search) > -1;
 	})
-  }
+},
+isModal(){
+  return this.$store.state.isModal
   },
-  components: {
-      
-  }
+url(){
+  return this.$store.state.modalIMG
 }
+}}
 </script>
 <style scoped>
+.modal-wrapper{
+  position:fixed;
+  width:100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background-color: rgba(50, 50, 50, .5);
+}
+.modal-body{
+  margin-top: 20vh;
+  width: 20%;
+  margin-left: 40%;
+
+}
 .list-enter-active, .list-leave-active {
     transition: all 1s ease-in-out;
 }
@@ -169,5 +196,26 @@ export default {
 .list-leave-to{
     opacity: 0;
     transform: translateY(-330px);
+}
+
+.modal-enter-active, .modal-leave-active {
+  transition: opacity .5s ease-in-out;
+}
+.modal-enter, .modal-leave-to {
+  opacity: 0
+}
+@media (max-width: 768px) {
+  .modal-body{
+  width: 80%;
+  margin-left: 10%;
+
+}
+}
+@media (min-width: 769px) and (max-width:2000px){
+  .modal-body{
+  width: 30%;
+  margin-left: 35%;
+
+}
 }
 </style>

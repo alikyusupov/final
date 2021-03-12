@@ -49,12 +49,12 @@ const User = require("./models/User");
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use(
   session({ 
       secret: 'da896624-28b1-44cd-8048-e8d6bc276b17',
       name:"sid",
-      cookie: { maxAge: 1000 * 60 * 60, secure: true, httpOnly: false },//hour
+      cookie: { maxAge: 1000 * 60 * 60, secure: false, httpOnly: false },//hour
       resave: false, 
       saveUninitialized: false, 
       store:store 
@@ -63,14 +63,16 @@ app.use(
 
 app.use("/", userRoutes)
 app.use("/admin", adminRoutes)
-
+app.get(["/visa", "/funland", "/dashboard", "/about","/chat","/map", "/auth", "/signup", "/appointment"], (req, res, next)=>{
+  res.sendFile(path.join(__dirname,'dist/index.html'))
+})
 
 
 io.on("connection",(socket)=>{
       let dataname = "";
       let datamessage = "";
       let datatoken = "";
-      socket.on("message", data=>{
+      socket.on("message", data =>{
         io.emit("message", data)
         User.findById(data.token)
         .then(user=>{
@@ -92,7 +94,11 @@ io.on("connection",(socket)=>{
           console.log(err)
         })
     })
-})
+    socket.on('fire',function(data){
+
+      io.sockets.emit('getShot', data);
+    })
+  })
 
 mongoose.connect("mongodb+srv://Alisher:asd123asd@dressify-zvh54.mongodb.net/itmo?retryWrites=true&w=majority", { 
     useNewUrlParser: true,

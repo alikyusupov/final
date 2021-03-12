@@ -4,22 +4,35 @@ const Message = require('../models/Message')
 
 const Schedule = require('../models/Schedule')
 
+const Booking = require('../models/Booking')
+
 const bcrypt = require("bcryptjs");
 
 exports.postSignup = (req, res, next)=>{
     User.findOne({ email: req.body.email })
     .then(userDoc => {
       if (userDoc) {
-        return res.json({message:"Email already exists"});
+        console.log("Email inuse")
+        return res.json({
+          message:"Email already exists",
+          emailinuse:true
+        });
       }
       return bcrypt.hash(req.body.password,12)
       .then(hashedPassword => {
       const user = new User({
         name: req.body.name,
-        email: req.body.mail,
+        email: req.body.email,
         password: hashedPassword,
       });
-      return user.save();
+      user.save(err=>{
+        if(err)
+          console.log(err)
+          return res.json({
+            message:"Успешная регистрация",
+            emailinuse:false
+          });
+      });
     })
     .catch(err => {
       console.log(err);
@@ -31,14 +44,15 @@ exports.postLogin = (req, res, next)=>{
     User.findOne({email: req.body.mail})
 	  .then(user=>{
 		if(!user){
-			return res.json({message:"Неверный логин"})
+			return res.json({
+        loginerror:true
+      })
 		}
 		bcrypt.compare(req.body.password, user.password)
 		.then((doMatch)=>{
 			if(doMatch && req.body.mail != "admin@admin.ru"){
         console.log("user")
-        //global.isAuth = true;  понял что это плохая идея
-        req.session.isAdmin = true;
+        req.session.isAdmin = false;
 				req.session.isLoggedIn = true;
       	req.session.user = user;
       	req.session.save(err => {
@@ -57,7 +71,6 @@ exports.postLogin = (req, res, next)=>{
       }
       else if(doMatch && req.body.mail == "admin@admin.ru"){
         console.log("master")
-        //global.isAdmin = true;
         req.session.isAdmin = true;
         req.session.isLoggedIn = true;
         req.session.user = user;
@@ -77,7 +90,7 @@ exports.postLogin = (req, res, next)=>{
       }
       else{
         res.json({
-          status:false
+          passworderror:true
         })
       } 
 		})
@@ -86,8 +99,6 @@ exports.postLogin = (req, res, next)=>{
 }
 
 exports.postLogout = (req, res, next)=>{
-    global.isAuth = false;
-    global.isAdmin = false;
     req.session.destroy();
     res.json({
       status:false
@@ -105,7 +116,6 @@ exports.getSchedule = (req, res, next)=>{
 }
 
 exports.getClientChat =  (req, res, next)=>{
-  console.log(req.session)
   Message.find({sender:req.body.userID})
   .then(messages=>{
       res.json(messages)
@@ -114,4 +124,44 @@ exports.getClientChat =  (req, res, next)=>{
       console.log(err)
   })
 }
+
+exports.postBook = (req, res, next)=>{
+    const date = new Date();
+    const localized = date.toLocaleString();
+    const booking = new Booking({
+    bookingID:      req.body.slot,
+    booker_name:    req.body.firstname,
+    booker_surname: req.body.lastname,
+    booker_email:   req.body.email,
+    booker_number:  req.body.phonenumber,
+    bookedAt:       localized
+    })
+    booking.save(err=>{
+      console.log(err)
+    })
+    Schedule.find()
+    .then(schedules=>{
+      const sch = schedules[2]
+      sch.reserve(req.body.slot);
+    })
+    .then(()=>{
+      res.json({
+        slot:req.body.slot
+      })
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+}
+
+exports.getAnswers = (req, res, next)=>{
+  User.findById(req.body.userID)
+  .then(user=>{
+    res.json(user.answers)
+  })
+  .catch(err=>{
+    console.log(err);
+  })
+}
+
 

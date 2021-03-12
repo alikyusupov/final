@@ -13,24 +13,44 @@ const store =  createStore({
             chats:[],
             username:localStorage.getItem("username") || "",
             clientmessages:[],
-            list:[]
+            list:[],
+            booking:{},
+            isModal:false,
+            modalIMG:"",
+            emailExistsError:false,
+            loginerror: false,
+            passworderror: false,
+            answers:[]
         }
     },
     mutations:{
         authorize(state, data){
-            console.log(state, data)
-            router.push("/auth")
+            if(data.data.emailinuse)
+                state.emailExistsError = true;
+            else{
+                state.emailExistsError = false;
+                router.push("/auth")
+            }
         },
         identify(state, data){
-            state.isAuth = data.data.status;
-            state.isAdmin = data.data.adminStatus;
-            state.username = data.data.username
-            localStorage.setItem("isAuth", data.data.status)
-            localStorage.setItem("isAdmin", data.data.adminStatus)
-            localStorage.setItem("sessionID", data.data.sessionID)
-            localStorage.setItem("userID", data.data.userID)
-            localStorage.setItem("username", data.data.username)
-            router.push("/")
+            console.log(data.data)
+            if(data.data.passworderror)
+                state.passworderror = true;
+            else if(data.data.loginerror)
+                state.loginerror = true;
+            else{
+                state.passworderror = false;
+                state.loginerror = false;
+                state.isAuth = data.data.status;
+                state.isAdmin = data.data.adminStatus;
+                state.username = data.data.username
+                localStorage.setItem("isAuth", data.data.status)
+                localStorage.setItem("isAdmin", data.data.adminStatus)
+                localStorage.setItem("sessionID", data.data.sessionID)
+                localStorage.setItem("userID", data.data.userID)
+                localStorage.setItem("username", data.data.username)
+                router.push("/")
+            }
         },
         exit(state){
             state.isAuth = false,
@@ -52,6 +72,7 @@ const store =  createStore({
             console.log(state, data)
         },
         dashboard(state, data){
+            console.log(data)
             state.chats = data.data
         },
         chat_client(state, data){
@@ -68,11 +89,28 @@ const store =  createStore({
         },
         clear(state){
             state.list = []
+        },
+        getdetails(state, data){
+            console.log(data.data)
+            state.booking = data.data;
+        },
+        showModal(state, data){
+            state.isModal = true;
+            state.modalIMG  = data.path
+        },
+        closeModal(state){
+            state.isModal = false;
+        },
+        sendmessage(state, data){
+            console.log(state, data)
+        },
+        getanswers(state, data){
+            state.answers = data.data
         }
     },
     actions:{
         signup(context, data){
-            axios.post('http://localhost:3000/signup', data)
+            axios.post('/signup', data)
             .then(response=> {
                 context.commit('authorize', response)
             })
@@ -81,7 +119,7 @@ const store =  createStore({
             });
         },
         login(context, data){
-            axios.post('http://localhost:3000/login', data)
+            axios.post('/login', data)
             .then(response=>{
                 context.commit('identify', response)
             })
@@ -90,7 +128,7 @@ const store =  createStore({
             });
         },
         logout(context){
-            axios.post('http://localhost:3000/logout')
+            axios.post('/logout')
             .then(response=>{
                 context.commit('exit', response)
             })
@@ -99,7 +137,7 @@ const store =  createStore({
             });
         },
         schedule(context){
-            axios.get('http://localhost:3000/schedule')
+            axios.get('/schedule')
             .then(response=>{
                 context.commit('schedule', response)
             })
@@ -108,7 +146,7 @@ const store =  createStore({
             });
         },
         book(context, data){
-            axios.post('http://localhost:3000/book', data)
+            axios.post('/book', data)
             .then(response=>{
                 context.commit('book', response)
             })
@@ -117,7 +155,7 @@ const store =  createStore({
             });
         },
         dashboard(context){
-            axios.get('http://localhost:3000/admin/chats')
+            axios.get('/admin/chats')
             .then(response=>{
                 context.commit('dashboard', response)
             })
@@ -127,9 +165,37 @@ const store =  createStore({
         },
         chat_client(context){
             let token = localStorage.getItem("userID")
-            axios.post('http://localhost:3000/chats',{userID:token})
+            axios.post('/chats',{userID:token})
             .then(response=>{
                 context.commit('chat_client', response)
+            })
+            .catch(error=>{
+                console.log(error);
+            });
+        },
+        getdetails(context, data){
+            axios.post("/admin/getdetails",{id: data.id})
+            .then(response=>{
+                context.commit('getdetails', response)
+            })
+            .catch(error=>{
+                console.log(error);
+            });
+        },
+        sendmessage(context, data){
+            axios.post("/admin/sendmessage", data)
+            .then(response=>{
+                context.commit('sendmessage', response)
+            })
+            .catch(error=>{
+                console.log(error);
+            });
+        },
+        getanswers(context){
+            let token = localStorage.getItem("userID")
+            axios.post('/getanswers',{userID:token})
+            .then(response=>{
+                context.commit('getanswers', response)
             })
             .catch(error=>{
                 console.log(error);

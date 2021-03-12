@@ -6,12 +6,17 @@
               <section v-for="message of messages" class="row" :key="message._id">
                   <div class="col-12">{{message.message}}</div>
               </section>
-              <hr>
               <p class="text-muted">Предыдущие сообщения</p>
+               <hr>
               <!--<section class="row flex-row-reverse ">
                   <div class="col-6">Message 1</div>
               </section>-->
-              
+          </div>
+          <div class="col-4">
+              <h2>Admin</h2>
+              <section v-for="answer of answers" class="row" :key="answer">
+                  <div class="col-12">{{answer}}</div>
+              </section>
           </div>
       </div>
       <div class="row">
@@ -46,6 +51,9 @@ export default {
       },
       messages(){
           return this.$store.state.clientmessages
+      },
+      answers(){
+          return this.$store.state.answers
       }
   },
   methods:{
@@ -60,6 +68,7 @@ export default {
   },
   mounted(){
       this.$store.dispatch("chat_client")
+      this.$store.dispatch("getanswers")
       this.$socket.on("message",(data)=>{
         let letters = data.message.split("");
         let parentEl = document.createElement("section");

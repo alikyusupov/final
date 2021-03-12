@@ -4,10 +4,15 @@
         <li>
             <router-link to="/chat" class="text-muted">
                     <i class="bi bi-chat-left-text"></i> Chat
-                </router-link>
+            </router-link>
         </li>
-        <li>Policy</li>
-        <li>Contacts</li>
+        <li>
+            
+            <router-link to="/map" class="text-muted">
+                    Map
+            </router-link>
+
+        </li>
     </ul>
 </section>
 </template>
@@ -25,8 +30,8 @@ export default {
         left: 50%;
         transform: translate(-50%);
         width:auto;
+        min-width: 350px;
         height: 25px;
-        position: fixed;
         bottom: 15px;
         background-color: rgba(255, 255, 255, .7);
         border-radius:10px;
@@ -35,7 +40,7 @@ export default {
         padding: 0;
         list-style-type: none;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-end;
         bottom:15px;
     }

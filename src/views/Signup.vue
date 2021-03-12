@@ -5,6 +5,16 @@
                 
             </div>
             <div id="parent" class="col-8 col-md-4">
+                    <div v-if="isEmail_inUse" class="text-white bg-danger">
+                        Email уже занят
+                    </div>
+                    <div v-if="isPasswordMissing" class="text-white bg-danger">
+                        Пароль обязателен
+                    </div>
+                    <div v-if="isPasswordNotMatch" class="text-white bg-danger">
+                        Пароли не совпадают
+                    </div>
+    
                     <section>
                             <div class="form-floating mb-3">
                                 <input v-model="name_signup" type="text" class="form-control" id="floatingName" placeholder="Name">
@@ -35,7 +45,6 @@
 </template>
 
 <script>
-import router from '../router/index'
 export default {
   name: 'Signup',
   data(){
@@ -43,22 +52,38 @@ export default {
          name_signup:null,
          mail_signup:null,
          pwd_signup:null,
-         pwd_confirm:null
+         pwd_confirm:null,
+         isPasswordMissing:false,
+         isPasswordNotMatch:false
       }
   },
   methods:{
       signup(){
-        this.$store.dispatch("signup", {
-            name:       this.name_signup,
-            mail:       this.mail_signup,
-            password:   this.pwd_signup
-        })
-        router.push("/auth")
-      }
+        if(!this.pwd_signup){
+            this.isPasswordMissing = true;
+        }
+        else{
+            if(this.pwd_signup!=this.pwd_confirm){
+                this.isPasswordNotMatch = true;
+            }
+            else{
+                this.isPasswordNotMatch = false;
+                this.isPasswordMissing = false;
+                 this.$store.dispatch("signup", {
+                    name:      this.name_signup||"Incognito",
+                    email:     this.mail_signup||"incognito@mail.ru",
+                    password:  this.pwd_signup
+                })
+            }
+        }
+    }
   },
   computed:{
       isAuth(){
           return this.$store.state.isAuth
+      },
+      isEmail_inUse(){
+          return this.$store.state.emailExistsError
       }
   }
 }

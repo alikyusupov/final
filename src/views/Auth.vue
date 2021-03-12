@@ -5,6 +5,12 @@
                 
             </div>
             <div id="parent" class="col-8 col-md-4">
+                    <div v-if="badpassword" class="text-white bg-danger">
+                        Неверный пароль
+                    </div>
+                    <div v-if="badlogin" class="text-white bg-danger">
+                        Неверный email
+                    </div>
                     <section>
                             <div class="form-floating mb-3">
                                 <input v-model="mail_login" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" >
@@ -53,6 +59,12 @@ export default {
   computed:{
       isAuth(){
           return this.$store.state.isAuth
+      },
+      badpassword(){
+          return this.$store.state.passworderror
+      },
+      badlogin(){
+          return this.$store.state.loginerror
       }
   }
 }

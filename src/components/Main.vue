@@ -1,4 +1,5 @@
 <template>
+
     <main class="container">
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -9,9 +10,6 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="pills-fees-tab" data-bs-toggle="pill" data-bs-target="#pills-fees" type="button" role="tab" aria-controls="pills-fees" aria-selected="false">Fees</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-summary-tab" data-bs-toggle="pill" data-bs-target="#pills-summary" type="button" role="tab" aria-controls="pills-summary" aria-selected="false">Summary</button>
         </li>
       </ul>
       <div class="tab-content" id="pills-tabContent">
@@ -26,8 +24,6 @@
         <div class="tab-pane fade" id="pills-fees" role="tabpanel" aria-labelledby="pills-fees-tab">
           <Fees/>
         </div>
-        <div class="tab-pane fade" id="pills-summary" role="tabpanel" aria-labelledby="pills-summary-tab">...</div>
-
       </div>
     </main>
 </template>

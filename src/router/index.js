@@ -9,11 +9,11 @@ import Appointment from '../views/Appointment.vue'
 import Chatroom from '../views/Chatroom.vue'
 import Dashboard from '../views/Dashboard.vue'
 import About from '../views/About.vue'
+import World from '../components/Map.vue'
+//import Funland from "../views/Funland.vue"
 
-/*import Purpose from "../components/visa-components/Purpose.vue"
-import Documents from "../components/visa-components/Documents.vue"
-import Fees from "../components/visa-components/Fees.vue"
-import Summary from "../components/visa-components/Summary.vue"*/
+const Funland = () => import('../views/Funland.vue')
+
 
 const routes = [
   {
@@ -32,16 +32,19 @@ const routes = [
     component: Main,
   },
   {
+    path: '/funland',
+    name: 'Funland',
+    component:Funland
+  },
+  {
     path: '/appointment',
     name: 'Appointment',
     component: Appointment,
     beforeEnter:(to ,from, next)=>{
       if (!store.state.isAuth) {
-        console.log(store.state.isAuth)
         next({ name: 'Auth' })
       }
       else {
-        console.log(store.state.isAuth)
         next()
       }
     }
@@ -49,7 +52,15 @@ const routes = [
   {
     path: '/chat',
     name: 'Chat',
-    component: Chatroom
+    component: Chatroom,
+    beforeEnter:(to ,from, next)=>{
+      if (!store.state.isAuth) {
+        next({ name: 'Auth' })
+      }
+      else {
+        next()
+      }
+    }
   },
   {
     path: '/auth',
@@ -74,8 +85,11 @@ const routes = [
       }
     }
   },
-  
-
+  {
+    path: '/map',
+    name: 'Map',
+    component: World
+  }
 ]
 
 const router = createRouter({

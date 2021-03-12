@@ -110,7 +110,7 @@ const store =  createStore({
     },
     actions:{
         signup(context, data){
-            axios.post('/signup', data)
+            axios.post('https://limitless-shelf-24472.herokuapp.com/signup', data)
             .then(response=> {
                 context.commit('authorize', response)
             })
@@ -119,7 +119,7 @@ const store =  createStore({
             });
         },
         login(context, data){
-            axios.post('/login', data)
+            axios.post('https://limitless-shelf-24472.herokuapp.com/login', data)
             .then(response=>{
                 context.commit('identify', response)
             })
@@ -128,7 +128,7 @@ const store =  createStore({
             });
         },
         logout(context){
-            axios.post('/logout')
+            axios.post('https://limitless-shelf-24472.herokuapp.com/logout')
             .then(response=>{
                 context.commit('exit', response)
             })
@@ -137,7 +137,7 @@ const store =  createStore({
             });
         },
         schedule(context){
-            axios.get('/schedule')
+            axios.get('https://limitless-shelf-24472.herokuapp.com/schedule')
             .then(response=>{
                 context.commit('schedule', response)
             })
@@ -146,7 +146,7 @@ const store =  createStore({
             });
         },
         book(context, data){
-            axios.post('/book', data)
+            axios.post('https://limitless-shelf-24472.herokuapp.com/book', data)
             .then(response=>{
                 context.commit('book', response)
             })
@@ -155,7 +155,7 @@ const store =  createStore({
             });
         },
         dashboard(context){
-            axios.get('/admin/chats')
+            axios.get('https://limitless-shelf-24472.herokuapp.com/admin/chats')
             .then(response=>{
                 context.commit('dashboard', response)
             })
@@ -165,7 +165,7 @@ const store =  createStore({
         },
         chat_client(context){
             let token = localStorage.getItem("userID")
-            axios.post('/chats',{userID:token})
+            axios.post('https://limitless-shelf-24472.herokuapp.com/chats',{userID:token})
             .then(response=>{
                 context.commit('chat_client', response)
             })
@@ -174,7 +174,7 @@ const store =  createStore({
             });
         },
         getdetails(context, data){
-            axios.post("/admin/getdetails",{id: data.id})
+            axios.post("https://limitless-shelf-24472.herokuapp.com/admin/getdetails",{id: data.id})
             .then(response=>{
                 context.commit('getdetails', response)
             })
@@ -183,7 +183,7 @@ const store =  createStore({
             });
         },
         sendmessage(context, data){
-            axios.post("/admin/sendmessage", data)
+            axios.post("https://limitless-shelf-24472.herokuapp.com/admin/sendmessage", data)
             .then(response=>{
                 context.commit('sendmessage', response)
             })
@@ -193,7 +193,7 @@ const store =  createStore({
         },
         getanswers(context){
             let token = localStorage.getItem("userID")
-            axios.post('/getanswers',{userID:token})
+            axios.post('https://limitless-shelf-24472.herokuapp.com/getanswers',{userID:token})
             .then(response=>{
                 context.commit('getanswers', response)
             })

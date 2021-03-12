@@ -28,6 +28,8 @@ const store = new mongoDBStore({
 
 const cors = require("cors")
 
+app.use(cors())
+
 const port = process.env.PORT||3000;
 
 const server = require('http').createServer(app);
@@ -35,6 +37,8 @@ const server = require('http').createServer(app);
 const userRoutes = require("./routes/user")
 
 const adminRoutes = require("./routes/admin")
+
+
 
 const io = require('socket.io')(server, {
   cors: {
@@ -46,7 +50,7 @@ const io = require('socket.io')(server, {
 const Message = require("./models/Message")
 const User = require("./models/User");
 
-app.use(cors())
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));

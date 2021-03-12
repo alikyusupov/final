@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css"
 
-const socket = io("https://limitless-shelf-24472.herokuapp.com/map");
+const socket = io();
 const app = createApp(App)
 app.config.globalProperties.$socket = socket
 

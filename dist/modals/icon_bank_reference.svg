@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F7F7F9;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st2{fill:#C0E5ED;}
+	.st3{fill:#FFFFFF;stroke:#70CBE0;stroke-miterlimit:10;}
+	.st4{font-family:'MyriadPro-Regular';}
+	.st5{font-size:18px;}
+	.st6{fill:#FFFFFF;stroke:#201600;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#2C2CD1;stroke-width:2;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#7D7DD3;stroke-miterlimit:10;}
+	.st9{font-size:12px;}
+	.st10{fill:none;stroke:#201600;stroke-miterlimit:10;}
+	.st11{font-size:6px;}
+	.st12{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st13{font-size:8px;}
+	.st14{font-size:7px;}
+	.st15{fill:#EF203E;}
+</style>
+<rect id="XMLID_48_" class="st0" width="300" height="300"/>
+<path id="XMLID_1_" class="st1" d="M170.4,261.5h-144c-3.7,0-6.7-3-6.7-6.7V59.4c0-3.7,3-6.7,6.7-6.7h144c3.7,0,6.7,3,6.7,6.7v195.3
+	C177.2,258.5,174.2,261.5,170.4,261.5z"/>
+<g id="XMLID_47_">
+	<path id="XMLID_2_" class="st2" d="M171.1,80.8H25.8c-3.4,0-6.1-2.7-6.1-6.1v-16c0-3.4,2.7-6.1,6.1-6.1h145.3
+		c3.4,0,6.1,2.7,6.1,6.1v16C177.2,78.1,174.5,80.8,171.1,80.8z"/>
+	<text id="XMLID_3_" transform="matrix(1 0 0 1 74.6667 88)" class="st3 st4 st5">БАНК</text>
+	<rect id="XMLID_4_" x="27.6" y="161.4" class="st6" width="141.7" height="19.2"/>
+	<circle id="XMLID_5_" class="st7" cx="70.9" cy="238" r="16.7"/>
+	<circle id="XMLID_6_" class="st1" cx="70.9" cy="238" r="12.8"/>
+	<path id="XMLID_7_" class="st8" d="M78.6,238.5c0,3,0,6-0.1,9c0.6,0.5,1.1,1,1.7,1.5c1.8-1.3,3.6-2.6,5.5-3.8v7.5l7.7,0.2L91,238.5
+		h-5c-0.9,5-1.7,10.1-2.6,15.1c0.2-0.4,1.7-3.6,5.2-4.4c3.2-0.7,6.7,1,8.5,4.3c2.4,0.1,4.9,0.3,7.3,0.4c-1.3-1.6-2.6-3.2-3.9-4.9
+		c-2.4,0.2-4.1-1.6-4.1-3c0-1.5,1.9-3.3,4.4-2.9c2.1,3.5,4.3,7.1,6.4,10.6c1.2-3.2,2.4-6.3,3.6-9.5c0.6,0.5,1.2,0.9,1.8,1.4
+		c1.6-0.7,3.1-1.4,4.7-2.1c0.8,0.4,1.8,1,2.6,2c3,3.6,1,8.9,0.9,9.3c-6.6-4.2-10.2-5.8-10.9-5.1c-0.4,0.5,0.3,1.9,2.2,4.3"/>
+	<text id="XMLID_8_" transform="matrix(1 0 0 1 74.6667 110.5)" class="st4 st9">Справка</text>
+	<rect id="XMLID_9_" x="31.1" y="164.3" class="st10" width="29.9" height="13.5"/>
+	<rect id="XMLID_10_" x="64.9" y="164.3" class="st10" width="29.9" height="13.5"/>
+	<rect id="XMLID_11_" x="100.2" y="164.3" class="st10" width="29.9" height="13.5"/>
+	<rect id="XMLID_12_" x="135.1" y="164.3" class="st10" width="29.9" height="13.5"/>
+	<text id="XMLID_13_" transform="matrix(1 0 0 1 22.2238 238.796)" class="st4 st11">специалист</text>
+	<text id="XMLID_14_" transform="matrix(1 0 0 1 137.0002 238.7964)" class="st4 st11">Банкин Е.М.</text>
+	<line id="XMLID_16_" class="st12" x1="48.3" y1="122.3" x2="144" y2="122.3"/>
+	<line id="XMLID_15_" class="st12" x1="48.3" y1="132" x2="144" y2="132"/>
+	<line id="XMLID_17_" class="st12" x1="48.3" y1="144" x2="144" y2="144"/>
+	<text id="XMLID_18_" transform="matrix(1 0 0 1 110 173.5)" class="st4 st11">RUR</text>
+	<text id="XMLID_19_" transform="matrix(1 0 0 1 144 173.5)" class="st4 st11">87200</text>
+	<text id="XMLID_20_" transform="matrix(1 0 0 1 160 91.5)" class="st4 st13">дата</text>
+	<text id="XMLID_21_" transform="matrix(1 0 0 1 33 173.5)" class="st4 st14">текущий</text>
+	<text id="XMLID_22_" transform="matrix(1 0 0 1 68.5 173.5)" class="st4 st14">счет №</text>
+	<text id="XMLID_23_" transform="matrix(1 0 0 1 94.7724 19.5)" class="st4 st9">Примерный образец</text>
+	<text id="XMLID_24_" transform="matrix(1 0 0 1 15 40)" class="st4 st9">Фирменный бланк банка</text>
+	<text id="XMLID_25_" transform="matrix(1 0 0 1 190 40)"><tspan x="0" y="0" class="st4 st9">Справка не </tspan><tspan x="0" y="14.4" class="st4 st9">старше 1 месяца</tspan></text>
+	<text id="XMLID_26_" transform="matrix(1 0 0 1 193.5 80)"><tspan x="0" y="0" class="st4 st9">ФИО, паспортные</tspan><tspan x="0" y="14.4" class="st4 st9">данные владельца</tspan><tspan x="0" y="28.8" class="st4 st9">счета</tspan></text>
+	<text id="XMLID_27_" transform="matrix(1 0 0 1 193.5 150)" class="st4 st9">Валюта счета</text>
+	<text id="XMLID_28_" transform="matrix(1 0 0 1 193.5 192)" class="st4 st9">Остаток на счете</text>
+	<text id="XMLID_29_" transform="matrix(1 0 0 1 193.5 237.9872)"><tspan x="0" y="0" class="st4 st9">Должность сотруд-</tspan><tspan x="0" y="14.4" class="st4 st9">ника банка</tspan></text>
+	<text id="XMLID_30_" transform="matrix(1 0 0 1 25.5 273)"><tspan x="0" y="0" class="st4 st13">Желательно, состояние счета должно подтверждать финансовую обеспечен-</tspan><tspan x="0" y="9.6" class="st4 st13">ность заявителя во время поездки из расчета «60 евро на каждого заявителя</tspan><tspan x="0" y="19.2" class="st4 st13">в один день пребывания за рубежом»</tspan></text>
+	<polyline id="XMLID_32_" class="st12" points="12.5,36.5 3.5,36.5 3.5,77.5 64.9,77.5 	"/>
+	<polyline id="XMLID_31_" class="st12" points="187,36.5 181,36.5 181,100.5 164.9,100.5 164.9,94.5 	"/>
+	<polyline id="XMLID_33_" class="st12" points="290,77.5 295.5,77.5 295.5,117.5 160,117.5 160,144 150,144 	"/>
+	<polyline id="XMLID_35_" class="st12" points="190,144 186.4,144 186.4,150 115.2,150 115.2,157.1 	"/>
+	<polyline id="XMLID_34_" class="st12" points="192,188.7 150,188.7 150,183.7 	"/>
+	<polyline id="XMLID_36_" class="st12" points="190,236.3 184.7,236.3 184.7,212.7 33,212.7 33,229.7 	"/>
+	<circle id="XMLID_37_" cx="64.9" cy="77.5" r="2.2"/>
+	<circle id="XMLID_38_" cx="164.9" cy="95.3" r="2.2"/>
+	<circle id="XMLID_39_" cx="115.2" cy="157.1" r="2.2"/>
+	<circle id="XMLID_40_" cx="150" cy="183.7" r="2.2"/>
+	<circle id="XMLID_41_" cx="33" cy="229.7" r="2.2"/>
+	<line id="XMLID_43_" class="st12" x1="160" y1="132" x2="150" y2="132"/>
+	<circle id="XMLID_42_" cx="150" cy="132" r="2.2"/>
+	<circle id="XMLID_44_" cx="150" cy="144" r="2.2"/>
+	<path id="XMLID_45_" class="st15" d="M9.2,283.7L9.2,283.7c-1.2,0-2.2-1-2.2-2.2v-15.3c0-1.2,1-2.2,2.2-2.2h0c1.2,0,2.2,1,2.2,2.2
+		v15.3C11.3,282.7,10.4,283.7,9.2,283.7z"/>
+	<path id="XMLID_46_" class="st15" d="M9.2,292L9.2,292C8,292,7,291,7,289.8v-0.3c0-1.2,1-2.2,2.2-2.2h0c1.2,0,2.2,1,2.2,2.2v0.3
+		C11.3,291,10.4,292,9.2,292z"/>
+</g>
+</svg>
